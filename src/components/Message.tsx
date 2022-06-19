@@ -14,8 +14,6 @@ export function Message() {
     <>
       {gameState != EGameState.PLAYING ? (
         <div className={styles.wrapper}>
-          <span>{hiddenWord}</span>
-
           <span>
             {gameState === EGameState.LOSE
               ? "Você perdeu!"
@@ -23,6 +21,7 @@ export function Message() {
               ? "Você ganhou!"
               : ""}
           </span>
+          <span>{hiddenWord}</span>
 
           <button onClick={handleClick}>Reiniciar</button>
         </div>

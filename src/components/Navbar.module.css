@@ -1,10 +1,23 @@
 .wrapper {
   text-align: center;
   padding: 2rem;
+  width: 100%;
 }
 
 .wrapper > h1 {
   font-size: 3rem;
   font-weight: bolder;
   text-transform: uppercase;
+}
+
+.wrapper div {
+  position: absolute;
+  float: left;
+  display: flex;
+  gap: 1rem;
+}
+
+.wrapper div .icon:hover {
+  color: var(--blue-100);
+  cursor: pointer;
 }
