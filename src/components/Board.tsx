@@ -15,19 +15,33 @@ const INITIAL_WORDS = [
   ],
 
   [
-    { letter: "A", isFocused: false },
-    { letter: "B", isFocused: false },
-    { letter: "C", isFocused: false },
-    { letter: "D", isFocused: false },
-    { letter: "E", isFocused: false },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
   ],
 
   [
-    { letter: "_", isFocused: false },
-    { letter: "_", isFocused: false },
-    { letter: "_", isFocused: false },
-    { letter: "_", isFocused: false },
-    { letter: "_", isFocused: false },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+  ],
+  [
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+  ],
+  [
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
+    { letter: "_" },
   ],
 ];
 

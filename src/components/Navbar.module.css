@@ -1,10 +1,10 @@
 .wrapper {
   text-align: center;
-  padding: 16px;
+  padding: 2rem;
 }
 
 .wrapper > h1 {
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: bolder;
   text-transform: uppercase;
 }

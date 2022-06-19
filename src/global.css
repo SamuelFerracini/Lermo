@@ -16,6 +16,10 @@
   --red-500: #f75a68;
 }
 
+:focus {
+  outline: transparent;
+}
+
 * {
   padding: 0;
   margin: 0;
