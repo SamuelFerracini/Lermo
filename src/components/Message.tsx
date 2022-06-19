@@ -4,6 +4,7 @@ import styles from "./Message.module.css";
 
 export function Message() {
   const gameState = useAppStore((state) => state.gameState);
+  const hiddenWord = useAppStore((state) => state.hiddenWord);
 
   const handleClick = () => {
     location.reload();
@@ -13,6 +14,8 @@ export function Message() {
     <>
       {gameState != EGameState.PLAYING ? (
         <div className={styles.wrapper}>
+          <span>{hiddenWord}</span>
+
           <span>
             {gameState === EGameState.LOSE
               ? "Você perdeu!"

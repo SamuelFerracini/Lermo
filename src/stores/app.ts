@@ -47,7 +47,7 @@ type State = {
 };
 
 export const useAppStore = create<State>((set) => ({
-  gameState: EGameState.PLAYING,
+  gameState: EGameState.LOSE,
 
   hiddenWord: "",
 
