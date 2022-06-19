@@ -28,8 +28,10 @@ const INITIAL_WORDS = [
 ];
 
 type State = {
+  hiddenWord: string;
   words: IWord[];
 
+  setHiddenWord: (hiddenWord: string) => void;
   setLetter: (letter: string) => void;
 
   setLetterFocus: (
@@ -40,7 +42,18 @@ type State = {
 };
 
 export const useWordStore = create<State>((set) => ({
+  hiddenWord: "",
+
   words: [...INITIAL_WORDS],
+
+  setHiddenWord: (hiddenWord: string) => {
+    set((state) => {
+      return {
+        ...state,
+        hiddenWord,
+      };
+    });
+  },
 
   setLetterFocus: (wordIdx: number, letterIdx: number, isFocused: boolean) => {
     set((state) => {
@@ -58,6 +71,8 @@ export const useWordStore = create<State>((set) => ({
 
   setLetter: (letter: string) => {
     set((state) => {
+      console.log(state);
+
       const wordIdx = state.words.findIndex((w) => w.focused);
 
       if (wordIdx === -1) return state;
