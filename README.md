@@ -15,7 +15,7 @@ Objetivo do jogo é descobrir a palavra secreta.
 
 ### Como jogar
 
-Para jogar é necessário escrever palavras com 5 letras e apertar enter, caso a letra esteja na posição correta ela ficará destacada em verde, caso a letra contenha na palavra mas em outra posição ela ficará destacada em amarelo e caso não exista ela ficará sem cor.
+Para jogar é necessário escrever palavras com 5 letras e apertar enter, caso a letra esteja na posição correta ela ficará destacada em verde, caso a palavra secreta contenha a letra mas em outra posição ela ficará destacada em amarelo e caso não exista ela ficará sem cor.
 
 ### Ajustes e melhorias
 
