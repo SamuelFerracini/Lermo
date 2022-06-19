@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import styles from "./App.module.css";
 
-import champions from "./resource/champions.json";
+import champions from "./resource/wordList.json";
 import { useAppStore } from "./stores/app";
 
 import { Message } from "./components/Message";
