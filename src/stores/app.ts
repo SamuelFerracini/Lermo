@@ -119,9 +119,12 @@ export const useAppStore = create<State>((set) => ({
     set((state) => {
       const wordIndex = state.words.findIndex((w) => w.focused);
 
+      if (state.words[wordIndex].letters.find((e) => e.letter === "_"))
+        return state;
+
       const hiddenWordLetters = state.hiddenWord.split("");
 
-      state.words[wordIndex].focused = false;
+      Object.assign(state.words[wordIndex], { focused: false });
 
       state.words[wordIndex].letters.forEach((letter, letterIdx) => {
         const hiddenLetter = hiddenWordLetters[letterIdx].toUpperCase();
@@ -142,9 +145,11 @@ export const useAppStore = create<State>((set) => ({
         (l) => l.status === ELetterStatus.RIGHT
       );
 
-      if (won) {
-        return { words: [...state.words], gameState: EGameState.WON };
-      }
+      const lost = state.words.length === wordIndex + 1 && !won;
+
+      if (won) return { words: [...state.words], gameState: EGameState.WON };
+
+      if (lost) return { words: [...state.words], gameState: EGameState.LOSE };
 
       if (wordIndex + 1 < state.words.length) {
         Object.assign(state.words[wordIndex + 1], { focused: true });
