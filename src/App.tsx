@@ -7,6 +7,7 @@ import { useAppStore } from "./stores/app";
 
 import { Message } from "./components/Message";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 import { Board } from "./components/Board";
 
 export interface IOnKeyPressed {
@@ -38,6 +39,7 @@ function App() {
       <Navbar />
       <Board />
       <Message />
+      <Footer />
     </div>
   );
 }

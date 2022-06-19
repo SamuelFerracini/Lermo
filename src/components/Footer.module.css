@@ -1,0 +1,20 @@
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+}
+
+.wrapper span {
+  display: flex;
+  gap: 8px;
+}
+
+.wrapper span a {
+  text-decoration: none;
+  color: var(--gray-300);
+}
+
+.wrapper span a:hover {
+  text-decoration: none;
+  color: var(--blue-100);
+}
