@@ -711,6 +711,11 @@ typescript@^4.6.3:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.4.tgz#1a88596d1cf47d59507a1bcdfb5b9dfe4d488235"
   integrity sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==
 
+use-sync-external-store@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.1.0.tgz#3343c3fe7f7e404db70f8c687adf5c1652d34e82"
+  integrity sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==
+
 vite@^2.9.9:
   version "2.9.12"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.12.tgz#b1d636b0a8ac636afe9d83e3792d4895509a941b"
@@ -722,3 +727,10 @@ vite@^2.9.9:
     rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+zustand@^4.0.0-rc.1:
+  version "4.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-4.0.0-rc.1.tgz#ec30a3afc03728adec7e1bd7bcc3592176372201"
+  integrity sha512-qgcs7zLqBdHu0PuT3GW4WCIY5SgXdsv30GQMu9Qpp1BA2aS+sNS8l4x0hWuyEhjXkN+701aGWawhKDv6oWJAcw==
+  dependencies:
+    use-sync-external-store "1.1.0"
