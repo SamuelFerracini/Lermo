@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 
-import { Navbar } from "./components/Navbar";
-import { Board } from "./components/Board";
-import { useAppStore } from "./stores/app";
+import styles from "./App.module.css";
 
 import champions from "./resource/champions.json";
+import { useAppStore } from "./stores/app";
+
+import { Message } from "./components/Message";
+import { Navbar } from "./components/Navbar";
+import { Board } from "./components/Board";
 
 export interface IOnKeyPressed {
   key: string;
@@ -16,7 +19,7 @@ function App() {
   const checkWord = useAppStore((state) => state.checkWord);
 
   const onKeyPressed = (e: IOnKeyPressed) => {
-    if (e.key.toUpperCase() === "ENTER") checkWord();
+    if (e.key.toUpperCase() === "Enter".toUpperCase()) checkWord();
 
     if (e.key.toUpperCase() === "Backspace".toUpperCase()) setLetter("_");
 
@@ -33,9 +36,10 @@ function App() {
   }, []);
 
   return (
-    <div style={{ height: "100vh" }} onKeyDown={onKeyPressed} tabIndex={0}>
+    <div className={styles.wrapper} onKeyDown={onKeyPressed} tabIndex={0}>
       <Navbar />
       <Board />
+      <Message />
     </div>
   );
 }

@@ -2,6 +2,12 @@ import create from "zustand";
 import { ELetterStatus } from "../components/Letter";
 import { IWord } from "../components/Word";
 
+export enum EGameState {
+  PLAYING = 0,
+  LOSE = 1,
+  WON = 2,
+}
+
 const INITIAL_WORDS = [
   {
     focused: true,
@@ -29,6 +35,7 @@ const INITIAL_WORDS = [
 ];
 
 type State = {
+  gameState: number;
   hiddenWord: string;
   words: IWord[];
 
@@ -44,6 +51,8 @@ type State = {
 };
 
 export const useAppStore = create<State>((set) => ({
+  gameState: EGameState.PLAYING,
+
   hiddenWord: "",
 
   words: [...INITIAL_WORDS],
@@ -129,8 +138,19 @@ export const useAppStore = create<State>((set) => ({
         }
       });
 
-      state.words[wordIndex + 1].focused = true;
-      state.words[wordIndex + 1].letters.forEach((l) => (l.letter = "_"));
+      const won = state.words[wordIndex].letters.every(
+        (l) => l.status === ELetterStatus.RIGHT
+      );
+
+      if (won) {
+        return { words: [...state.words], gameState: EGameState.WON };
+      }
+
+      if (wordIndex + 1 < state.words.length) {
+        Object.assign(state.words[wordIndex + 1], { focused: true });
+        Object.assign(state.words[wordIndex + 1].letters[0], { focused: true });
+        state.words[wordIndex + 1].letters.forEach((l) => (l.letter = "_"));
+      }
 
       return { words: [...state.words] };
     });
