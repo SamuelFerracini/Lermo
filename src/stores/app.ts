@@ -22,8 +22,6 @@ const INITIAL_WORDS = [
   },
 
   ...Array.from({ length: 5 }, () => ({
-    focused: false,
-
     letters: [
       { letter: "" },
       { letter: "" },
