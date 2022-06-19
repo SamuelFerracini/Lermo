@@ -13,6 +13,18 @@ const INITIAL_WORDS = [
       { letter: "_" },
     ],
   },
+
+  ...Array.from({ length: 4 }, () => ({
+    focused: false,
+
+    letters: [
+      { letter: "" },
+      { letter: "" },
+      { letter: "" },
+      { letter: "" },
+      { letter: "" },
+    ],
+  })),
 ];
 
 type State = {
@@ -48,11 +60,30 @@ export const useWordStore = create<State>((set) => ({
     set((state) => {
       const wordIdx = state.words.findIndex((w) => w.focused);
 
+      if (wordIdx === -1) return state;
+
       const letterIdx = state.words[wordIdx].letters.findIndex(
         (l) => l.focused
       );
 
-      state.words[wordIdx].letters[letterIdx].letter = letter;
+      if (letterIdx === -1) return state;
+
+      if (letter === "_") {
+        if (letterIdx - 1 > -1)
+          Object.assign(state.words[wordIdx].letters[letterIdx - 1], {
+            focused: true,
+          });
+      } else {
+        if (letterIdx + 1 < state.words[wordIdx].letters.length)
+          Object.assign(state.words[wordIdx].letters[letterIdx + 1], {
+            focused: true,
+          });
+      }
+
+      Object.assign(state.words[wordIdx].letters[letterIdx], {
+        letter: letter,
+        focused: false,
+      });
 
       return {
         words: [...state.words],

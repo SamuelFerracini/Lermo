@@ -14,6 +14,8 @@ function App() {
       console.log("Enter");
     }
 
+    if (e.key.toUpperCase() === "Backspace".toUpperCase()) setLetter("_");
+
     if (/^[a-zA-Z]{1}$/.test(e.key)) setLetter(e.key);
   };
 

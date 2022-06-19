@@ -6,3 +6,7 @@
   grid-row-gap: 0px;
   margin-bottom: 6px;
 }
+
+.disabled {
+  pointer-events: none;
+}

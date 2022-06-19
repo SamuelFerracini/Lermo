@@ -3,14 +3,17 @@ import styles from "./Word.module.css";
 import { ILetter, Letter } from "./Letter";
 
 export interface IWord {
-  focused: boolean;
+  focused?: boolean;
   letters: ILetter[];
   id?: number;
 }
 
-export function Word({ letters = [], id }: IWord) {
+export function Word({ letters = [], id, focused = false }: IWord) {
   return (
-    <div key={id} className={styles.wrapper}>
+    <div
+      key={id}
+      className={`${styles.wrapper} ${!focused && styles.disabled}`}
+    >
       {letters.map((letter, letterIdx) => (
         <Letter
           key={`${id}=${letterIdx}`}
