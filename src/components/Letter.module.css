@@ -12,22 +12,26 @@
   font-size: 3rem;
 }
 
-.wrapper:hover {
+.wrapperEmpty:hover {
   cursor: pointer;
   border: 8px solid var(--gray-400);
 }
 
 .wrapperFocused {
-  border: 8px solid var(--gray-900);
-  width: 6rem;
-  height: 6rem;
-  border-radius: 8px;
   border: 8px solid var(--gray-400);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  font-weight: bolder;
-  font-size: 3rem;
+.wrapperGreen {
+  border: 0;
+  background: var(--green-500);
+}
+
+.wrapperGray {
+  border: 0;
+  background: var(--gray-900);
+}
+
+.wrapperYellow {
+  border: 0;
+  background: var(--yellow-400);
 }

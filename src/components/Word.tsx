@@ -12,6 +12,7 @@ export function Word({ letters = [], id }: IWord) {
     <div key={id} className={styles.wrapper}>
       {letters.map((letter, letterIndex) => (
         <Letter
+          status={letter.status}
           key={`${id}-${letterIndex}`}
           letter={letter.letter}
           focused={letter.focused}

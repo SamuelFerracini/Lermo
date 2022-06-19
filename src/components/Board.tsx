@@ -3,15 +3,17 @@ import styles from "./Board.module.css";
 import { useState } from "react";
 
 import { Word } from "./Word";
+import { ELetterStatus } from "./Letter";
 
 const INITIAL_WORDS = [
   [
-    { letter: "A", isFocused: false },
-    { letter: "B", isFocused: false },
-    { letter: "C", isFocused: false },
-    { letter: "D", isFocused: false },
-    { letter: "E", isFocused: false },
+    { letter: "S", isFocused: false, status: ELetterStatus.WRONG_PLACE },
+    { letter: "A", isFocused: false, status: ELetterStatus.RIGHT },
+    { letter: "N", isFocused: false, status: ELetterStatus.WRONG_PLACE },
+    { letter: "U", isFocused: false, status: ELetterStatus.RIGHT },
+    { letter: "X", isFocused: false, status: ELetterStatus.WRONG },
   ],
+
   [
     { letter: "A", isFocused: false },
     { letter: "B", isFocused: false },
@@ -19,6 +21,7 @@ const INITIAL_WORDS = [
     { letter: "D", isFocused: false },
     { letter: "E", isFocused: false },
   ],
+
   [
     { letter: "_", isFocused: false },
     { letter: "_", isFocused: false },
