@@ -1,10 +1,10 @@
 import styles from "./Board.module.css";
 
 import { Word } from "./Word";
-import { useWordStore } from "../stores/word";
+import { useAppStore } from "../stores/app";
 
 export function Board() {
-  const words = useWordStore((state) => state.words);
+  const words = useAppStore((state) => state.words);
 
   return (
     <div className={styles.board}>

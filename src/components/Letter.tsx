@@ -1,7 +1,6 @@
 import styles from "./Letter.module.css";
 
-import { useState } from "react";
-import { useWordStore } from "../stores/word";
+import { useAppStore } from "../stores/app";
 
 export enum ELetterStatus {
   EMPTY,
@@ -25,7 +24,7 @@ export function Letter({
   rowIdx,
   status = ELetterStatus.EMPTY,
 }: ILetter) {
-  const setLetterFocused = useWordStore((state) => state.setLetterFocus);
+  const setLetterFocused = useAppStore((state) => state.setLetterFocus);
 
   const handleClick = () => {
     setLetterFocused(rowIdx as number, letterIdx as number, true);
