@@ -37,8 +37,8 @@ function App() {
   return (
     <div className={styles.wrapper} onKeyDown={onKeyPressed} tabIndex={0}>
       <Navbar />
-      <Board />
       <Message />
+      <Board />
       <Footer />
     </div>
   );
