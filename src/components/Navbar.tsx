@@ -23,7 +23,7 @@ export function Navbar() {
           size={32}
         />
         <FaGithub
-          onClick={handleLinkedinRedirect}
+          onClick={handleGithubRedirect}
           className={styles.icon}
           size={32}
         />
