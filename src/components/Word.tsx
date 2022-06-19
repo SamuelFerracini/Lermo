@@ -3,17 +3,20 @@ import styles from "./Word.module.css";
 import { ILetter, Letter } from "./Letter";
 
 export interface IWord {
+  focused: boolean;
   letters: ILetter[];
-  id?: number | string;
+  id?: number;
 }
 
 export function Word({ letters = [], id }: IWord) {
   return (
     <div key={id} className={styles.wrapper}>
-      {letters.map((letter, letterIndex) => (
+      {letters.map((letter, letterIdx) => (
         <Letter
+          key={`${id}=${letterIdx}`}
           status={letter.status}
-          key={`${id}-${letterIndex}`}
+          rowIdx={id}
+          letterIdx={letterIdx}
           letter={letter.letter}
           focused={letter.focused}
         />

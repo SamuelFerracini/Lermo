@@ -1,6 +1,7 @@
 import styles from "./Letter.module.css";
 
 import { useState } from "react";
+import { useWordStore } from "../stores/word";
 
 export enum ELetterStatus {
   EMPTY,
@@ -10,22 +11,24 @@ export enum ELetterStatus {
 }
 
 export interface ILetter {
+  letterIdx?: number;
   letter?: string | undefined;
   focused?: boolean;
-  id?: number | string;
+  rowIdx?: number;
   status?: ELetterStatus;
 }
 
 export function Letter({
   letter,
   focused = false,
-  id,
+  letterIdx,
+  rowIdx,
   status = ELetterStatus.EMPTY,
 }: ILetter) {
-  const [isFocused, setFocused] = useState(focused);
+  const setLetterFocused = useWordStore((state) => state.setLetterFocus);
 
   const handleClick = () => {
-    setFocused(!isFocused);
+    setLetterFocused(rowIdx as number, letterIdx as number, true);
   };
 
   const getClass = (status: ELetterStatus) => {
@@ -43,10 +46,10 @@ export function Letter({
 
   return (
     <div
-      key={id}
+      key={`${rowIdx}-${letterIdx}`}
       onClick={handleClick}
       className={`${styles.wrapper} ${
-        isFocused && status === ELetterStatus.EMPTY && styles.wrapperFocused
+        focused && status === ELetterStatus.EMPTY && styles.wrapperFocused
       } ${getClass(status)}`}
     >
       <span className={styles.letter}>{letter}</span>
