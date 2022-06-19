@@ -7,8 +7,7 @@
 ### Tecnologias
 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor![Screenshot from 2022-06-19 15-00-13](https://user-images.githubusercontent.com/42303025/174494738-4cc40eab-ce98-48eb-baae-eaf1000bd1bc.png)
-=white" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
 
 ### Objetivo
 
