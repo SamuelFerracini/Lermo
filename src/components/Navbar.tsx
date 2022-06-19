@@ -1,10 +1,11 @@
 import styles from "./Navbar.module.css";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaQuestion } from "react-icons/fa";
 
 export function Navbar() {
   const linkedinUrl = "https://www.linkedin.com/in/samuel-ferracini/";
   const githubUrl = "https://github.com/SamuelFerracini";
+  const questionUrl = "https://github.com/SamuelFerracini/Lormo#como-jogar";
 
   const handleLinkedinRedirect = () => {
     window.open(linkedinUrl, "_blank");
@@ -14,9 +15,13 @@ export function Navbar() {
     window.open(githubUrl, "_blank");
   };
 
+  const handleQuestionRedirect = () => {
+    window.open(questionUrl, "_blank");
+  };
+
   return (
     <div className={styles.wrapper}>
-      <div>
+      <div className={`${styles.wrapIcons} ${styles.wrapLeft}`}>
         <FaLinkedin
           onClick={handleLinkedinRedirect}
           className={styles.icon}
@@ -30,6 +35,14 @@ export function Navbar() {
       </div>
 
       <h1>Lormo</h1>
+
+      <div className={`${styles.wrapIcons} ${styles.wrapRight}`}>
+        <FaQuestion
+          onClick={handleQuestionRedirect}
+          className={styles.icon}
+          size={32}
+        />
+      </div>
     </div>
   );
 }

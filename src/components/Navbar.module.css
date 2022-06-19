@@ -1,7 +1,7 @@
 .wrapper {
-  text-align: center;
   padding: 1.5rem;
   width: 100%;
+  text-align: center;
 }
 
 .wrapper > h1 {
@@ -10,14 +10,24 @@
   text-transform: uppercase;
 }
 
-.wrapper div {
+.wrapIcons {
   position: absolute;
-  float: left;
   display: flex;
   gap: 1rem;
+  top: 16px;
 }
 
-.wrapper div .icon:hover {
+.icon:hover {
   color: var(--blue-100);
   cursor: pointer;
+}
+
+.wrapleft {
+  position: absolute;
+  left: 16px;
+}
+
+.wrapRight {
+  position: absolute;
+  right: 16px;
 }
