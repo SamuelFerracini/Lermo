@@ -30,8 +30,6 @@ function App() {
     const randomChampion =
       champions[Math.floor(Math.random() * champions.length)];
 
-    console.log(randomChampion);
-
     setHiddenWord(randomChampion);
   }, []);
 

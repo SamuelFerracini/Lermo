@@ -27,7 +27,7 @@ export function Letter({
   const setLetterFocused = useAppStore((state) => state.setLetterFocus);
 
   const handleClick = () => {
-    setLetterFocused(rowIdx as number, letterIdx as number, true);
+    setLetterFocused(rowIdx as number, letterIdx as number);
   };
 
   const getClass = (status: ELetterStatus) => {
