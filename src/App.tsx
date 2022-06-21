@@ -54,8 +54,6 @@ function App() {
     ],
   };
 
-  console.log(isMobile);
-
   return (
     <div className={styles.wrapper} onKeyDown={onKeyPressed} tabIndex={0}>
       <Navbar />
