@@ -10,7 +10,10 @@ export function Footer() {
       <span>
         Feito com
         <FaHeart color="#ff1f32" />
-        por <a href={linkedinUrl}>Samuel Ferracini</a>
+        por{" "}
+        <a target="_blank" href={linkedinUrl}>
+          Samuel Ferracini
+        </a>
       </span>
     </div>
   );
