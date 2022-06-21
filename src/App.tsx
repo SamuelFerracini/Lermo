@@ -39,8 +39,6 @@ function App() {
       <Navbar />
       <Board />
       <Footer />
-      <input id="test" />
-      <script> document.getElementById("test").focus()</script>
     </div>
   );
 }

@@ -45,6 +45,7 @@ export function Letter({
 
   return (
     <div
+      tabIndex={0}
       key={`${rowIdx}-${letterIdx}`}
       onClick={handleClick}
       className={`${styles.wrapper} ${
