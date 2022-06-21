@@ -60,7 +60,7 @@ function App() {
       <Board />
       <Footer />
       <div className={`${styles.keyboardPlace} ${!isMobile && styles.hide}`}>
-        {" "}
+        -
       </div>
       <div className={`${styles.keyboard} ${!isMobile && styles.hide}`}>
         <Keyboard onKeyPress={handle} layout={keyboardLayout} />
