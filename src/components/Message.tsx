@@ -23,7 +23,9 @@ export function Message() {
           </span>
           <span>{hiddenWord}</span>
 
-          <button onClick={handleClick}>Reiniciar</button>
+          <div>
+            <button onClick={handleClick}>Reiniciar</button>
+          </div>
         </div>
       ) : (
         ""

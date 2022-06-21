@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 1.5rem;
+  padding: 1.25rem;
   width: 100%;
   text-align: center;
 }
@@ -17,6 +17,10 @@
   top: 16px;
 }
 
+.wrapIcons svg {
+  font-size: 32px;
+}
+
 .icon:hover {
   color: var(--blue-100);
   cursor: pointer;
@@ -30,4 +34,16 @@
 .wrapRight {
   position: absolute;
   right: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper > h1 {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  .wrapIcons svg {
+    font-size: 24px;
+  }
 }

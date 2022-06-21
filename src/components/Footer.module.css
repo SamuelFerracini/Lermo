@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .wrapper span {
@@ -15,4 +15,10 @@
 .wrapper span a:hover {
   text-decoration: none;
   color: var(--blue-100);
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 1rem;
+  }
 }

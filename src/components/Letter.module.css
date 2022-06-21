@@ -35,3 +35,28 @@
   border: 0;
   background: var(--yellow-400);
 }
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    border: 4px solid var(--gray-900);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.3rem;
+  }
+
+  .wrapperEmpty:hover {
+    cursor: pointer;
+    border: 4px solid var(--gray-400);
+  }
+
+  .wrapperFocused {
+    border: 4px solid var(--gray-400);
+  }
+}

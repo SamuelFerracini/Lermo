@@ -22,26 +22,14 @@ export function Navbar() {
   return (
     <div className={styles.wrapper}>
       <div className={`${styles.wrapIcons} ${styles.wrapLeft}`}>
-        <FaLinkedin
-          onClick={handleLinkedinRedirect}
-          className={styles.icon}
-          size={32}
-        />
-        <FaGithub
-          onClick={handleGithubRedirect}
-          className={styles.icon}
-          size={32}
-        />
+        <FaLinkedin onClick={handleLinkedinRedirect} className={styles.icon} />
+        <FaGithub onClick={handleGithubRedirect} className={styles.icon} />
       </div>
 
       <h1>Lormo</h1>
 
       <div className={`${styles.wrapIcons} ${styles.wrapRight}`}>
-        <FaQuestion
-          onClick={handleQuestionRedirect}
-          className={styles.icon}
-          size={32}
-        />
+        <FaQuestion onClick={handleQuestionRedirect} className={styles.icon} />
       </div>
     </div>
   );
