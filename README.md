@@ -1,8 +1,13 @@
 # Lormo
 
-<img style="width: 350px" src="https://user-images.githubusercontent.com/42303025/174494748-4cee4692-e921-4b23-b70f-bbf2d6d07a01.png" />
+<img style="width: 350px" src="https://user-images.githubusercontent.com/42303025/174695029-ff7c32f0-a033-411c-8ccf-7c9c125c7439.png" />
 
 > Aplicação baseada no jogo [termo](https://term.ooo/) mas com nomes de campeões e itens [League of Legends](https://www.leagueoflegends.com/pt-br/)
+
+
+### Link para acesso
+
+https://lormo.herokuapp.com
 
 ### Tecnologias
 
