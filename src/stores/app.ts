@@ -2,6 +2,8 @@ import create from "zustand";
 import { ELetterStatus } from "../components/Letter";
 import { IWord } from "../components/Word";
 
+import wordList from "../resource/wordList.json";
+
 export enum EGameState {
   PLAYING = 0,
   LOSE = 1,
@@ -122,6 +124,18 @@ export const useAppStore = create<State>((set) => ({
       const wordIndex = state.words.findIndex((w) => w.focused);
 
       if (state.words[wordIndex].letters.find((e) => e.letter === "_"))
+        return state;
+
+      if (
+        !wordList.find(
+          (word) =>
+            word.toUpperCase() ===
+            state.words[wordIndex].letters
+              .map(({ letter }) => letter)
+              .join("")
+              .toUpperCase()
+        )
+      )
         return state;
 
       const hiddenWordLetters = state.hiddenWord.split("");
