@@ -10,15 +10,19 @@
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 2.5rem;
+
+  -webkit-transition: background 0.5s linear;
+  -ms-transition: background 0.5s linear;
+  transition: background 0.5s linear;
 }
 
 .wrapperEmpty:hover {
   cursor: pointer;
-  border: 8px solid var(--gray-400);
+  border: 8px solid var(--green-300);
 }
 
 .wrapperFocused {
-  border: 8px solid var(--gray-400);
+  border: 8px solid var(--green-300);
 }
 
 .wrapperGreen {

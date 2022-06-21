@@ -22,7 +22,7 @@
 }
 
 .icon:hover {
-  color: var(--blue-100);
+  color: var(--green-300);
   cursor: pointer;
 }
 

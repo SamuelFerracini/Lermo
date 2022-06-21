@@ -28,7 +28,7 @@
   font-weight: bold;
   cursor: pointer;
 
-  transition: background-color 1s;
+  transition: background 1s;
 }
 
 .wrapper button:hover {
