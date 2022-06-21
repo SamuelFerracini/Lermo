@@ -37,9 +37,10 @@ function App() {
   return (
     <div className={styles.wrapper} onKeyDown={onKeyPressed} tabIndex={0}>
       <Navbar />
-      <Message />
       <Board />
       <Footer />
+      <input id="test" />
+      <script> document.getElementById("test").focus()</script>
     </div>
   );
 }
