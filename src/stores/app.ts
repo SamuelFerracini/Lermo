@@ -13,7 +13,7 @@ const INITIAL_WORDS = [
     focused: true,
 
     letters: [
-      { letter: "_" },
+      { letter: "_", focused: true },
       { letter: "_" },
       { letter: "_" },
       { letter: "_" },
