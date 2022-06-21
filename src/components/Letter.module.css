@@ -42,9 +42,9 @@
 
 @media only screen and (max-width: 600px) {
   .wrapper {
-    border: 4px solid var(--gray-900);
-    width: 3rem;
-    height: 3rem;
+    border: 5px solid var(--gray-900);
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 8px;
 
     display: flex;
@@ -52,15 +52,15 @@
     align-items: center;
     text-transform: uppercase;
     font-weight: bolder;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .wrapperEmpty:hover {
     cursor: pointer;
-    border: 4px solid var(--green-300);
+    border: 5px solid var(--green-300);
   }
 
   .wrapperFocused {
-    border: 4px solid var(--green-300);
+    border: 5px solid var(--green-300);
   }
 }

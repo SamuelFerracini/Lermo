@@ -24,10 +24,10 @@ export function Letter({
   rowIdx,
   status = ELetterStatus.EMPTY,
 }: ILetter) {
-  const setLetterFocused = useAppStore((state) => state.setLetterFocus);
+  const setLetterFocus = useAppStore((state) => state.setLetterFocus);
 
   const handleClick = () => {
-    setLetterFocused(rowIdx as number, letterIdx as number);
+    setLetterFocus(rowIdx as number, letterIdx as number);
   };
 
   const getClass = (status: ELetterStatus) => {
@@ -49,7 +49,7 @@ export function Letter({
       key={`${rowIdx}-${letterIdx}`}
       onClick={handleClick}
       className={`${styles.wrapper} ${
-        focused && status === ELetterStatus.EMPTY && styles.wrapperFocused
+        focused && status === ELetterStatus.EMPTY ? styles.wrapperFocused : ""
       } ${getClass(status)}`}
     >
       <span className={styles.letter}>{letter}</span>

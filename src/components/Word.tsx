@@ -12,7 +12,7 @@ export function Word({ letters = [], id, focused = false }: IWord) {
   return (
     <div
       key={id}
-      className={`${styles.wrapper} ${!focused && styles.disabled}`}
+      className={`${styles.wrapper} ${!focused ? styles.disabled : ""}`}
     >
       {letters.map((letter, letterIdx) => (
         <Letter
