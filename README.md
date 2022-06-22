@@ -4,7 +4,6 @@
 
 > Aplicação baseada no jogo [termo](https://term.ooo/) mas com nomes de campeões e itens [League of Legends](https://www.leagueoflegends.com/pt-br/)
 
-
 ### Link para acesso
 
 https://lormo.herokuapp.com
@@ -26,8 +25,6 @@ Para jogar é necessário escrever palavras com 5 letras e apertar enter, caso a
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Suporte para edge
-- [ ] Suporte para safari
 - [ ] Animações
 - [ ] Mobile
 
