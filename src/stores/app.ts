@@ -15,7 +15,7 @@ const INITIAL_WORDS = [
     focused: true,
 
     letters: [
-      { letter: "_", focused: true },
+      { letter: "_" },
       { letter: "_" },
       { letter: "_" },
       { letter: "_" },
@@ -41,6 +41,7 @@ type State = {
 
   checkWord: () => void;
   setHiddenWord: (hiddenWord: string) => void;
+  setNextLetterFocused: (direction: string) => void;
   setLetter: (letter: string) => void;
 
   setLetterFocus: (wordIdx: number, letterIdx: number) => void;
@@ -58,6 +59,49 @@ export const useAppStore = create<State>((set) => ({
       ...state,
       hiddenWord,
     }));
+  },
+
+  setNextLetterFocused: (direction: string) => {
+    set((state) => {
+      const wordIdx = state.words.findIndex((w) => w.focused);
+
+      if (wordIdx === -1) return state;
+
+      const letterIdx = state.words[wordIdx].letters.findIndex(
+        (l) => l.focused
+      );
+
+      if (letterIdx === -1) return state;
+      Object.assign(state.words[wordIdx].letters[letterIdx], {
+        focused: false,
+      });
+
+      if (direction === "right") {
+        if (letterIdx + 1 < state.words[wordIdx].letters.length) {
+          Object.assign(state.words[wordIdx].letters[letterIdx + 1], {
+            focused: true,
+          });
+        } else {
+          Object.assign(state.words[wordIdx].letters[letterIdx], {
+            focused: true,
+          });
+        }
+      } else {
+        if (letterIdx - 1 > -1) {
+          Object.assign(state.words[wordIdx].letters[letterIdx - 1], {
+            focused: true,
+          });
+        } else {
+          Object.assign(state.words[wordIdx].letters[letterIdx], {
+            focused: true,
+          });
+        }
+      }
+
+      return {
+        words: [...state.words],
+      };
+    });
   },
 
   setLetterFocus: (wordIdx: number, letterIdx: number) => {

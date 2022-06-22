@@ -21,13 +21,27 @@ function App() {
   const setLetter = useAppStore((state) => state.setLetter);
   const setHiddenWord = useAppStore((state) => state.setHiddenWord);
   const checkWord = useAppStore((state) => state.checkWord);
+  const setNextLetterFocused = useAppStore(
+    (state) => state.setNextLetterFocused
+  );
 
   const onKeyPressed = (e: IOnKeyPressed) => {
-    if (e.key.toUpperCase() === "Enter".toUpperCase()) checkWord();
+    const upperKeyPressed = e.key.toUpperCase();
 
-    if (e.key.toUpperCase() === "Backspace".toUpperCase()) setLetter("_");
+    if (["ENTER"].includes(upperKeyPressed)) checkWord();
 
-    if (/^[a-zA-Z]{1}$/.test(e.key)) setLetter(e.key.toUpperCase());
+    if (["BACKSPACE", "DELETE"].includes(upperKeyPressed)) setLetter("_");
+
+    if (["ARROWLEFT", "ARROWRIGHT"].includes(upperKeyPressed)) {
+      const directions: Record<string, string> = {
+        ARROWLEFT: "left",
+        ARROWRIGHT: "right",
+      };
+
+      setNextLetterFocused(directions[upperKeyPressed]);
+    }
+
+    if (/^[A-Z]{1}$/.test(upperKeyPressed)) setLetter(upperKeyPressed);
   };
 
   useEffect(() => {
@@ -63,7 +77,14 @@ function App() {
         -
       </div>
       <div className={`${styles.keyboard} ${!isMobile && styles.hide}`}>
-        <Keyboard onKeyPress={handle} layout={keyboardLayout} />
+        <Keyboard
+          onKeyPress={handle}
+          layout={keyboardLayout}
+          display={{
+            "{bksp}": "⌫",
+            "{enter}": "↵",
+          }}
+        />
       </div>
     </div>
   );
