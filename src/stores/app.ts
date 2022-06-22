@@ -38,21 +38,33 @@ type State = {
   gameState: number;
   hiddenWord: string;
   words: IWord[];
+  isAlertVisible: boolean;
 
   checkWord: () => void;
   setHiddenWord: (hiddenWord: string) => void;
   setNextLetterFocused: (direction: string) => void;
   setLetter: (letter: string) => void;
+  setAlertVisibility: (value: boolean) => void;
 
   setLetterFocus: (wordIdx: number, letterIdx: number) => void;
 };
 
-export const useAppStore = create<State>((set) => ({
+export const useAppStore = create<State>((set, get) => ({
   gameState: EGameState.PLAYING,
+  isAlertVisible: false,
 
   hiddenWord: "",
 
   words: [...INITIAL_WORDS],
+
+  setAlertVisibility: (value: boolean) => {
+    set((state) => {
+      return {
+        ...state,
+        isAlertVisible: value,
+      };
+    });
+  },
 
   setHiddenWord: (hiddenWord: string) => {
     set((state) => ({
@@ -130,13 +142,15 @@ export const useAppStore = create<State>((set) => ({
 
       if (letterIdx === -1) return state;
 
+      const oldLetter = state.words[wordIdx].letters[letterIdx].letter;
+
       Object.assign(state.words[wordIdx].letters[letterIdx], {
         letter: letter,
         focused: false,
       });
 
       if (letter === "_") {
-        if (letterIdx - 1 > -1) {
+        if (letterIdx - 1 > -1 && oldLetter === "_") {
           Object.assign(state.words[wordIdx].letters[letterIdx - 1], {
             focused: true,
           });
@@ -179,8 +193,18 @@ export const useAppStore = create<State>((set) => ({
               .join("")
               .toUpperCase()
         )
-      )
-        return state;
+      ) {
+        if (state.isAlertVisible) return state;
+
+        setTimeout(() => {
+          get().setAlertVisibility(false);
+        }, 2000);
+
+        return {
+          ...state,
+          isAlertVisible: true,
+        };
+      }
 
       const hiddenWordLetters = state.hiddenWord.split("");
 

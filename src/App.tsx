@@ -6,6 +6,7 @@ import champions from "./resource/wordList.json";
 import { useAppStore } from "./stores/app";
 
 import { Keyboard } from "./components/Keyboard";
+import { Alert } from "./components/Alert";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Board } from "./components/Board";
@@ -51,6 +52,7 @@ function App() {
   return (
     <div className={styles.wrapper} onKeyDown={onKeyPressed} tabIndex={0}>
       <Navbar />
+      <Alert />
       <Board />
       <Footer />
       <Keyboard />
