@@ -26,7 +26,7 @@ export function Navbar() {
         <FaGithub onClick={handleGithubRedirect} className={styles.icon} />
       </div>
 
-      <h1>Lormo</h1>
+      <h1>Lermo</h1>
 
       <div className={`${styles.wrapIcons} ${styles.wrapRight}`}>
         <FaQuestion onClick={handleQuestionRedirect} className={styles.icon} />

@@ -1,4 +1,4 @@
-# Lormo
+# Lermo
 
 <img style="width: 350px" src="https://user-images.githubusercontent.com/42303025/174695029-ff7c32f0-a033-411c-8ccf-7c9c125c7439.png" />
 
@@ -28,17 +28,17 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Animações
 - [ ] Mobile
 
-## 🚀 Instalando Lormo
+## 🚀 Instalando Lermo
 
-Para instalar o Lormo, siga estas etapas:
+Para instalar o Lermo, siga estas etapas:
 
 ```
 yarn
 ```
 
-## ☕ Usando Lormo
+## ☕ Usando Lermo
 
-Para usar Lormo, siga estas etapas:
+Para usar Lermo, siga estas etapas:
 
 ```
 yarn dev
