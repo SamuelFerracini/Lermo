@@ -25,6 +25,7 @@ Para jogar é necessário escrever palavras com 5 letras e apertar enter, caso a
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
+- [ ] Colocar outra store
 - [ ] Animações
 - [ ] Mobile
 
